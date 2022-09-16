@@ -1,0 +1,60 @@
+.paging {
+    height: 56px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.paging .navigation {
+    display: flex;
+    align-items: center;
+}
+
+.paging .navigation .angle {
+    background-color: unset;
+    border-radius: 4px;
+    width: 24px;
+    height: 24px;
+    border: 1px solid transparent;
+    margin: 0 4px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.paging .navigation .angle:hover {
+    border-color: #bbb;
+    background-color: #f0f0f0;
+}
+
+.paging .navigation .number-group {
+    background-color: unset;
+    height: 24px;
+    display: flex;
+}
+
+.paging .navigation .number-group .number {
+    background-color: unset;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    border: 1px solid #bbb;
+    margin: 0 4px;
+    font-size: 13px;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 24px;
+}
+
+.paging .navigation .number-group .number:hover {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+.paging .navigation .number-group .number--selected {
+    background-color: #019160;
+    color: #fff;
+}

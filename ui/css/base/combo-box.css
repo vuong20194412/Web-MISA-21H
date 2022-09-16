@@ -1,0 +1,61 @@
+.combo-box {
+    border: 1px #bbb solid;
+    border-radius: 4px;
+    height: 40px;
+    outline: none;
+    padding-left: 16px;
+    padding-right: 16px;
+    min-width: 200px;
+    font-size: 13px;
+    color: #000;
+    font-family: Regular;
+}
+
+.combo-box:focus {
+    border-color: #019160;
+    outline: #019160;
+}
+
+.combo-box-hint {
+    font-size: 11px;
+    color: #bbb;
+    font-family: Medium;
+}
+
+.combo-box-label {
+    font-size: 13px;
+    color: #000;
+    font-family: Medium;
+    padding-bottom: 4px;
+}
+
+.combo-box-icon {
+    background-size: 16px;
+    background-position: center;
+    width: 40px;
+}
+
+.combo-box-item {
+    font-size: 13px;
+    color: #000;
+    font-family: Regular;
+    height: 40px;
+    text-align: left;
+    padding-left: 36px;
+    border: none;
+}
+
+.combo-box-item:hover {
+    background-color: #e9ebee;
+}
+
+.combo-box-item--selected {
+    background-color: #019160;
+}
+
+.combo-box-item-icon-selected {
+    /* color: #e5e5e5; */
+    background-image: url(../../asset/image/add.png);
+    background-size: 16px;
+    background-position-x: 10px;
+}

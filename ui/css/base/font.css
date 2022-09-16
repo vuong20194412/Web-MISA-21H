@@ -1,0 +1,60 @@
+@font-face {
+    font-family: Bold;
+    src: url(../../asset/font/GoogleSans-Bold.otf);
+}
+@font-face {
+    font-family: Medium;
+    src: url(../../asset/font/GoogleSans-Medium.otf);
+}
+@font-face {
+    font-family: Regular;
+    src: url(../../asset/font/GoogleSans-Regular.otf);
+}
+
+.heading {
+    font-family: Bold;
+    font-size: 24px;
+    color: #000;
+}
+
+.tittle {
+    font-family: Bold;
+    font-size: 20px;
+    color: #000;
+}
+
+.tittle2 {
+    font-family: Bold;
+    font-size: 15px;
+    color: #000;
+}
+
+.label-field-input {
+    font-family: Medium;
+    font-size: 13px;
+    color: #000;
+}
+
+.label {
+    font-family: Regular;
+    font-size: 13px;
+    color: #454545;
+}
+
+.content-details {
+    font-family: Medium;
+    font-size: 13px;
+    color: #000;
+}
+
+.body-content {
+    font-family: Regular;
+    font-size: 13px;
+    color: #454545;
+}
+
+.sub-text, .hint-text {
+    font-family: Regular;
+    font-size: 11px;
+    color: #bbb;
+}

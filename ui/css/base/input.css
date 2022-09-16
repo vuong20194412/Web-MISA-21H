@@ -1,0 +1,108 @@
+.input-label {
+    font-size: 13px;
+    color: #000;
+    font-family: Medium;
+    padding-bottom: 4px;
+}
+
+.input {
+    border: 1px solid;
+    border-radius: 4px;
+    height: 40px;
+    min-width: 200px;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.input .date {
+    border: none;
+    outline: none;
+    height: calc(100% - 2px);
+    width: calc(100% - 2px);
+    padding-left: 16px;
+    margin-right: 10px;
+    font-family: Regular;
+}
+
+.input--default {
+    border-color: #bbb;
+    outline: #bbb;
+}
+
+.input--default>input {
+    font-size: 11px;
+    color: #bbb;
+    font-family: Regular;
+}
+
+.input--focus {
+    border-color: #019160;
+    outline: #019160;
+}
+
+.input--focus>input {
+    font-size: 13px;
+    color: #000;
+    font-family: Regular;
+}
+
+.input--done {
+    border-color: #bbb;
+    outline: #bbb;
+}
+
+.input--done>input {
+    font-size: 13px;
+    color: #000;
+    font-family: Regular;
+}
+
+.input--error {
+    border-color: #ff4747;
+    outline: #ff4747;
+}
+
+.input--error>input {
+    font-size: 13px;
+    color: #000;
+    font-family: Regular;
+}
+
+.input-right__body {
+    padding-left: 16px;
+    border: none;
+    border-radius: 0px 4px 4px 0px;
+    outline: none;
+    width: calc(100% - 40px);
+}
+
+.input-right__icon {
+    background-size: 16px;
+    width: 16px;
+    height: 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 12px 8px 12px 16px;
+}
+
+.input-left__body {
+    padding-left: 16px;
+    border: none;
+    border-radius: 4px 0px 0px 4px;
+    outline: none;
+    width: calc(100% - 36px);
+}
+
+.input-left__icon {
+    background-size: 16px;
+    width: 16px;
+    height: 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: none;
+    margin: 12px 10px;
+}
+
+.input--required {
+    color: #ff4747;
+}

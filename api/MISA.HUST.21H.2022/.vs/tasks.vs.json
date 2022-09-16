@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "task-MISA.HUST.21H.2022",
+      "appliesTo": "MISA.HUST.21H.2022.API/",
+      "type": "launch"
+    }
+  ]
+}

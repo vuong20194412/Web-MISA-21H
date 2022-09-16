@@ -1,0 +1,74 @@
+.content {
+    order: 4;
+    background-color: #fff;
+    height: calc(100vh - 48px);
+    border-top: 1px #bbb solid;
+    box-sizing: border-box;
+    padding: 0px 16px 0px 24px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.content .header {
+    height: 48px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content .header .heading {
+    max-width: calc(50% - 8px);
+}
+
+.content .header .button {
+    max-width: calc(50% - 8px);
+}
+
+.content .toolbar {
+    height: 48px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.content .toolbar .filter {
+    max-width: 80%;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.content .toolbar .filter .input {
+    width: calc((80% - 40px) / 3);
+    margin-right: 8px;
+}
+
+.content .toolbar .filter select {
+    width: calc((80% - 40px) / 3);
+    margin: 0px 8px;
+}
+
+.content .toolbar .button-group {
+    max-width: 20%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.content .toolbar .button-group button {
+    margin-left: 8px;
+}
+
+.content .main {
+    height: calc(100% - 96px);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+}

@@ -1,0 +1,64 @@
+.header-left {
+    order: 1;
+    background-color: #fff;
+    border-right: 1px #bbb solid;
+    min-height: 24px;
+    min-width: 186px;
+    box-sizing: border-box;
+    padding-left: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.header-left .icon {
+    height: 24px;
+    width: 24px;
+    background-size: 24px;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+}
+
+.header-left .image {
+    height: 24px;
+    width: calc(100% - 50px);
+    background-size: contain;
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+
+.header-right {
+    order: 2;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 0px 16px 0px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-right .restaurant {
+    max-width: calc(50% - 28px);
+}
+
+.header-right .user {
+    height: 40px;
+    max-width: calc(50% - 28px);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.header-right .user .avatar {
+    height: 40px;
+    width: 40px;
+    background-size: contain;
+    background-position: 0px center;
+    background-repeat: no-repeat;
+}
+
+.header-right .user .name {
+    max-width: calc(100% - 40px);
+    box-sizing: border-box;
+    padding-left: 16px;
+}

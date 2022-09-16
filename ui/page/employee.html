@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh mục nhân viên</title>
+    <link rel="stylesheet" href="../css/all.css">
+    <link rel="stylesheet" href="../css/page/employee.css">
+    <!-- nhúng các thư viện -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Nhúng các js dùng chung -->
+    <script src="/js/ui.js"></script>
+    <script src="/js/format.js"></script>
+    <!-- Nhúng các js sử dụng riêng cho trang -->
+    <script src="/js/page/employee.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header-left">
+            <div class="icon icon--toggle"></div>
+            <div class="image image--logo"></div>
+        </div>
+        <div class="header-right">
+            <div class="restaurant">
+                <select class="combo-box no-border">
+                    <option>Nhà hàng Biển Đông</option>
+                </select>
+            </div>
+            <div class="user">
+                <div class="avatar image--avatar"></div>
+                <div class="name content-details">Nguyễn Văn Mạnh</div>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="item icon--dashboard">Tổng quan</div>
+            <div class="item icon--report">Báo cáo</div>
+            <div class="item icon--dashboard">Mua hàng</div>
+            <div class="item icon--dic-employee item--selected">Danh mục nhân viên</div>
+            <div class="item icon--dic-employee">Danh mục khách hàng</div>
+            <div class="item icon--setting">Thiết lập hệ thống</div>
+        </div>
+        <div class="content">
+            <div class="header">
+                <div class="heading">Danh sách nhân viên</div>
+                <button id="addButton" class="button button-icon1 icon--add">Thêm nhân viên</button>
+            </div>
+            <div class="toolbar">
+                <div class="filter">
+                    <div class="input">
+                        <div class="input-right__icon icon--search"></div>
+                        <input id="searchInput" type="text" class="input-right__body">
+                    </div>
+                     <select name="departmentComboBox" id="departmentComboBox" class="combo-box">
+                        <option value="">Tất cả phòng ban</option>
+                    </select>
+                    <select name="positionComboBox" id="positionComboBox" class="combo-box">
+                        <option value="">Tất cả vị trí</option>
+                    </select>
+                </div>
+                <div class="button-group">
+                    <button id="deleteButton" class="icon--delete"></button>
+                    <button id="duplicateButton" class="icon--duplicate"></button>
+                    <button id="refreshButton" class="icon--refresh"></button>
+                </div>
+            </div>
+            <div class="main">
+                <div class="table-wrapper">
+                    <table id="table" class="table">
+                        <thead>
+                            <tr>
+                                <th field="index"          class="text-align--left content-details"    style="width:fit-content" title="Số thứ tự">STT</th>
+                                <th field="EmployeeCode"   class="text-align--left content-details"    style="width:fit-content"                   >Mã nhân viên</th>
+                                <th field="FullName"       class="text-align--left content-details"    style="width:fit-content"                   >Họ và tên</th>
+                                <th field="GenderName"     class="text-align--left content-details"    style="width:fit-content"                   >Giới tính</th>
+                                <th field="DateOfBirth"    class="text-align--center content-details"  style="width:fit-content"  format="date"    >Ngày sinh</th>
+                                <th field="PhoneNumber"    class="text-align--left content-details"    style="width:fit-content"                   >Số điện thoại</th>
+                                <th field="Email"          class="text-align--left content-details"    style="width:fit-content"                   >Email</th>
+                                <th field="PositionName"   class="text-align--left content-details"    style="width:fit-content"                   >Vị trí</th>
+                                <th field="DepartmentName" class="text-align--left content-details"    style="width:fit-content"                   >Phòng ban</th>
+                                <th field="Salary"         class="text-align--right content-details"   style="width:fit-content"  format="money"   >Mức lương cơ bản</th>
+                                <th field="WorkStatus"     class="text-align--left content-details"    style="width:fit-content"  format="status"  >Tình trạng công việc</th> 
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                        </tbody>
+                    </table>
+                </div>
+                <div id="paging" class="paging">
+                    <div class="body-content">Hiển thị <b>01-10/200</b> nhân viên</div>
+                    <div class="navigation">
+                        <div class="angle icon--angle-dbleft"></div>
+                        <div class="angle icon--angle-left"></div>
+                        <div class="number-group">
+                            <div class="number number--selected body-content">1</div>
+                        </div>
+                        <div class="angle icon--angle-right"></div>
+                        <div class="angle icon--angle-dbright"></div>
+                    </div>
+                    <div>
+                        <select name="" id="" class="combo-box no-border">
+                            <option value="10">10 nhân viên/trang</option>
+                            <option value="20">20 nhân viên/trang</option>
+                            <option value="50">50 nhân viên/trang</option>
+                            <option value="100">100 nhân viên/trang</option>
+                        </select>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+
+    <div id="deleteWarnPopUp" class="pop-up">
+        <div class="pop-up__content">
+            <div closePopup class="pop-up__button--close icon--x"></div>
+            <div class="pop-up__header">Thông báo</div>
+            <div class="pop-up__body body-content">
+                Bạn có chắc chắn muốn xóa nhân viên <b style="padding: 0px 4px;">[ Mã nhân viên: ]</b> không?
+            </div>
+            <div class="pop-up__footer">
+                <button okPopup tabindex="2" class="button">Có</button>
+                <button cancelPopup tabindex="3" class="pop-up__button--cancel">Không</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="formPopUp" class="pop-up">
+        <div class="pop-up__content">
+            <div closePopup class="pop-up__button--close icon--x"></div>
+            <div class="pop-up__header">THÔNG TIN NHÂN VIÊN</div>
+            <div class="pop-up__body" style="margin-bottom: 8px">
+                <div class="pop-up__avatar">
+                    <div class="pop-up__image icon-default-avatar"></div>
+                    <p style="text-align: center">(Vui lòng chọn ảnh có định dạng  <br> .jpg, .jpeg, .png, .gif)</p>
+                </div>
+                <div class="pop-up__inputs">
+                    <div>
+                        <div class="tittle">A.THÔNG TIN CHUNG:</div>
+                        <div style="height: 4px; width: 15%; background-color: #019160; margin: 4px 0px 16px 0px;"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col--left">
+                            <label for="">Mã nhân viên (<span class="input--required">*</span>)</label>
+                            <div class="input">
+                                <input tabindex="2" field="EmployeeCode" id="employeeCodeInput" required type="text" class="input-left__body">
+                                <div class="input-left__icon icon--cricle-x"></div>
+                            </div>
+                            <div class="notice"></div>
+                        </div>
+                        <div class="col col--right">
+                            <label for="">Họ và tên (<span class="input--required">*</span>)</label>
+                            <div class="input">
+                                <input tabindex="3" field="FullName" id="fullNameInput" required type="text" class="input-left__body">
+                                <div class="input-left__icon icon--cricle-x"></div>
+                            </div>
+                            <div class="notice"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col--left">
+                            <label for="">Ngày sinh</label>
+                            <div class="input" title="Dùng lên/xuống trái/phải cách để lựa chọn bằng bàn phím">
+                                <input tabindex="4" field="DateOfBirth" type="date" class="date">
+                            </div>
+                            <div class="notice"></div>
+                        </div>
+                        <div class="col col--right">
+                            <label for="" class="combo-box-label">Giới tính</label>
+                            <div>
+                                <select tabindex="5" field="Gender" name="" id="" class="combo-box" style="width:100%">
+                                    <option value="">Chưa xác định</option>
+                                    <option value="0">Nam</option>
+                                    <option value="1">Nữ</option>
+                                    <option value="2">Khác</option>
+                                </select>
+                            </div>
+                            <div class="notice"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col--left">
+                            <label for="">Số CMTND/Căn cước (<span class="input--required">*</span>)</label>
+                            <div class="input">
+                                <input tabindex="6" field="IdentityNumber" required type="text" class="input-left__body">
+                                <div class="input-left__icon icon--cricle-x"></div>
+                            </div>
+                            <div class="notice"></div>
+                        </div>
+                        <div class="col col--right">
+                            <label for="">Ngày cấp</label>
+                            <div class="input" title="Dùng lên/xuống trái/phải cách để lựa chọn bằng bàn phím">
+                                <input tabindex="7" field="IdentityDate" type="date" class="date">
+                            </div>
+                            <div class="notice"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col--left">
+                            <label for="">Nơi cấp</label>
+                            <div class="input">
+                                <input tabindex="8" field="IdentityPlace" type="text" class="input-left__body">
+                                <div class="input-left__icon icon--cricle-x"></div>
+                            </div>
+                            <div class="notice"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col--left">
+                            <label for="">Email (<span class="input--required">*</span>)</label>
+                            <div class="input">
+                                <input tabindex="9" field="Email" required type="email" class="input-left__body">
+                                <div class="input-left__icon icon--cricle-x"></div>
+                            </div>
+                            <div class="notice"></div>
+                        </div>
+                        <div class="col col--right">
+                            <label for="">Số điện thoại (<span class="input--required">*</span>)</label>
+                            <div class="input">
+                                <input tabindex="10" field="PhoneNumber" required type="text" class="input-left__body">
+                                <div class="input-left__icon icon--cricle-x"></div>
+                            </div>
+                            <div class="notice"></div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="tittle">B.THÔNG TIN CÔNG VIỆC:</div>
+                        <div style="height: 4px; width: 15%; background-color: #019160; margin: 4px 0px 16px 0px;"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col col--left">
+                            <label for="" class="combo-box-label">Vị trí</label>
+                            <div>
+                                <select tabindex="11" field="PositionId" name="positionComboBox" class="combo-box" style="width:100%">
+                                    <option value="">Chưa xác định</option>
+                                </select>
+                            </div>
+                            <div class="notice"></div>
+                        </div>
+                        <div class="col col--right">
+                            <label for="" class="combo-box-label">Phòng ban</label>
+                            <div>
+                                <select tabindex="12" field="DepartmentId" name="departmentComboBox" id="popUpDepartmentComboBox" class="combo-box" style="width:100%">
+                                    <option value="">Chưa xác định</option>
+                                </select>
+                            </div>
+                            <div class="notice"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col--left">
+                            <label for="">Mã số thuế cá nhân</label>
+                            <div class="input">
+                                <input tabindex="13" field="PersonalTaxCode" type="text" class="input-left__body">
+                                <div class="input-left__icon icon--cricle-x"></div>
+                            </div>
+                            <div class="notice"></div>
+                        </div>
+                        <div class="col col--right">
+                            <label for="">Mức lương cơ bản</label>
+                            <div class="input">
+                                <input tabindex="14" field="Salary" type="text" id="salaryInput" class="input-left__body" style="text-align:end;">
+                                <div class="input-left__icon icon--cricle-x"></div>
+                            </div>
+                            <div class="notice"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col--left">
+                            <label for="">Ngày tham gia công ty</label>
+                            <div class="input" title="Dùng lên/xuống trái/phải cách để lựa chọn bằng bàn phím">
+                                <input tabindex="15" field="JoinDate" type="date" class="date">
+                            </div>
+                            <div class="notice"></div>
+                        </div>
+                        <div class="col col--right">
+                            <label for="" class="combo-box-label">Tình trạng công việc</label>
+                            <div>
+                                <select tabindex="16" field="WorkStatus" name="" id="" class="combo-box" style="width:100%">
+                                    <option value="">Chưa xác định</option>
+                                    <option value="0">Đang làm việc</option>
+                                    <option value="1">Đang nghỉ phép</option>
+                                    <option value="2">Khác</option>
+                                </select>
+                            </div>
+                            <div class="notice"></div>
+                        </div>
+                    </div>
+                    <div class="sub-text">Gợi ý: Dùng các phím lên/xuống trái/phải và phím cách để lựa chọn ngày tháng năm bằng bàn phím</div>
+                </div>
+            </div>
+            <div class="pop-up__footer">
+                <button savePopup tabindex="17" class="button button-icon1 icon--save">Lưu</button>
+                <button cancelPopup tabindex="18" class="pop-up__button--cancel">Hủy</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

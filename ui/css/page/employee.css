@@ -1,0 +1,9 @@
+#deleteButton, #duplicateButton, #refreshButton {
+    border-radius: 4px;
+    height: 40px;
+    width: 40px;
+    border: 1px solid #bbb;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
+}

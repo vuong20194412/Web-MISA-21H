@@ -1,0 +1,31 @@
+.button {
+    background-color: #019160;
+    border-radius: 4px;
+    height: 40px;
+    font-size: 13px;
+    color: #fff;
+    font-family: Regular;
+    padding-left: 24px;
+    padding-right: 24px;
+    text-align: center;
+    min-width: 100px;
+}
+
+.button:hover, .button:focus {
+    background-color: #2fbe8e;
+}
+
+/* pressed */
+.button:active {
+    background-color: #01b075;
+}
+
+.button-icon1 {
+    background-size: 16px;
+    padding-left: 40px;
+    padding-right: 16px;
+    text-align: left;
+    background-position-x: 16px;
+    background-position-y: center;
+    background-repeat: no-repeat;
+}

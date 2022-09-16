@@ -1,0 +1,86 @@
+@import url(base/button.css);
+@import url(base/icon.css);
+@import url(base/image.css);
+@import url(base/combo-box.css);
+@import url(base/input.css);
+@import url(base/table.css);
+@import url(base/paging.css);
+@import url(base/pop-up.css);
+@import url(layout/container.css);
+@import url(layout/header.css);
+@import url(layout/menu.css);
+@import url(layout/content.css);
+@import url(base/font.css);
+
+/*---------------button-------------------*/
+button {
+    outline: none;
+    border: none;
+}
+
+.no-border {
+    border: none;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .menu {
+        display: none;
+    }
+
+    .content {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+}
+
+html, body {
+    font-size: 0px;
+    margin: 0px;
+    min-width: 896px;
+}
+
+label {
+    font-size: 13px;
+    color: #000;
+    font-family: Medium;
+    padding-bottom: 4px;
+}
+
+.row {
+    min-width: 496px;
+    display: flex;
+}
+
+.row .col {
+    min-width: 240px;
+    width: calc(50% - 8px);
+}
+
+.row .col--left {
+    margin-right: 8px;
+}
+
+.row .col--right {
+    margin-left: 8px;
+}
+
+.notice {
+    height: 16px;
+    font-size: 11px;
+    color: #ff4747;
+    font-family: Regular;
+}
+
+/* Căn chỉnh văn bản */
+.text-align--left {
+    text-align: left;
+}
+
+.text-align--center {
+    text-align: center;
+}
+
+.text-align--right {
+    text-align: right;
+}
